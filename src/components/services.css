@@ -1,0 +1,18 @@
+.service{
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+.servicearea h1{
+    text-align: center;
+    margin: 2rem;
+
+}
+body{
+    overflow-x: hidden;
+}
+.oneservice{
+    background: linear-gradient(to right,pink,orange);
+}

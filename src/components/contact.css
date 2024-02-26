@@ -1,0 +1,72 @@
+.contactarea {
+    display: flex;
+    background-color:#393E46; /* Light orange */
+    height: 60vh;
+    width: 80vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 1rem;
+}
+
+.main-area {
+    height: 92vh;
+    width: 99vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftarea {
+    height: 55vh;
+    background-color: #e75151; /* Purple */
+    width: 30vw;
+    padding: 30px;
+}
+
+.leftarea h1 {
+    font-size: 50px;
+    color: #FFF; /* White */
+}
+
+.rightarea {
+    height: 55vh;
+    background-color: #EEEEEE; /* Dark purple */
+    width: 50vw;
+    padding: 40px;
+}
+
+.icons {
+    margin-top: 100px;
+    font-size: x-large;
+}
+
+@media screen and (max-width: 950px) {
+    .leftarea h1{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .contactarea{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+    }
+    .leftarea{
+       width: 50vw;
+    }
+    .main-area{
+        height: 92.5vh;
+    }
+}
+@media screen and (max-width: 400px) {
+    .leftarea .icons{
+        font-size: medium;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .leftarea h1{
+        font-size: medium;
+    }
+}

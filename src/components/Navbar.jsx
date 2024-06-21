@@ -3,13 +3,29 @@ import { useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 
-const Navbar = ({userId}) => {
+const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const logoutbutton= ()=> {
         localStorage.removeItem("token");
         navigate('/')
     }
+
+    const isadmin = () => {
+        const token = localStorage.getItem('token');
+        console.log('Token:', token); // Debugging2026tanmay2026kumar2026chaurasia2026
+        if(token) {
+            const email = localStorage.getItem('email');
+            const password = localStorage.getItem('password');
+            console.log('Email:', email); // Debugging
+            console.log('Password:', password); // Debugging
+            if(email === 'tanmaykumar.kanpur@gmail.com' && password === '2026tanmay2026kumar2026chaurasia2026') {
+                return true;
+            }
+        }
+        return false;
+    };
+    
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light ">
@@ -23,6 +39,10 @@ const Navbar = ({userId}) => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
+                            {isadmin() && (<li className="nav-item">
+                                <a className={`nav-link ${location.pathname === '/admin' ? 'active' : ''}`}
+                                    aria-current="page" href="/admin">Admin</a>
+                            </li>)}
                             <li className="nav-item">
                                 <a className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
                                     aria-current="page" href="/">Home</a>

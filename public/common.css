@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar-brand{
+    margin-right: 115px;
+    background-image: linear-gradient(
+        to right,
+        #061a27,
+        #e74c3c,
+        rgb(128, 0, 117)
+      ); /* Set your gradient colors here */
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-weight: 500;
+}

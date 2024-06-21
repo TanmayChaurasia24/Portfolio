@@ -64,6 +64,10 @@ router.post('/login',[
            if(!validPass){
                return res.status(400).json({error:'Invalid Password'})
            }
+
+           localStorage.setItem('email',email)
+           localStorage.setItem('password',password)
+
            const data = {
             user: {
                 id: user.id,

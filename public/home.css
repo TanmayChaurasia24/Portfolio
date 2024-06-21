@@ -1,0 +1,74 @@
+.sec1{
+    /* height: 90vh; */
+    background-image: url("kelly-sikkema-tk9RQCq5eQo-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff; /* Set the text color to ensure it's visible against the background */
+    height: 90vh;/* Adjust the padding as needed */
+}
+.skill-main{
+    color: #959595;
+    margin: 10px;
+    /* background-color: red; */
+    height: 40px;
+    font-size: 25px;
+}
+.name{
+    font-size: 45px;
+    color: antiquewhite;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    margin-right: 450px;
+}
+.logo-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+.logo-nav i{
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+@media(max-width:990px){
+    .name{
+        font-size: 40px;
+        margin-left: 150px;
+    }
+}
+  
+@media(max-width:770px){
+    .name{
+        font-size: 30px;
+        margin-left: 450px;
+    }
+}
+@media(max-width:450px){
+    .navbar-brand{
+        font-size: medium;
+    }
+}
+@media(max-width:370px){
+    .navbar-brand{
+        font-size: small;
+    }
+}
+@media(max-width:310px){
+    .navbar-brand{
+        display: none;
+    }
+    .name{
+        font-size: 1.5rem;
+        font-weight: 100;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+}
+  

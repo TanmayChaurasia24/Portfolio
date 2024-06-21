@@ -24,7 +24,6 @@ const Login = () => {
       if (json.jwt_data) {
         // Save the auth token and redirect
         localStorage.setItem("token", json.jwt_data);
-        localStorage.setItem("userId", json._id);
         navigate("/");
       } else {
         console.log("Login failed:", json.error || "Unknown error");

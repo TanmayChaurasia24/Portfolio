@@ -16,6 +16,16 @@ To run this application using Docker, follow these steps:
 - Docker installed on your machine.
 - Docker Compose installed (optional but recommended for managing multi-container setups).
 
+### Pull Docker Images
+
+Before running the containers, pull the Docker images from Docker Hub:
+
+```bash
+docker pull tanmaykumarchaurasia/portfolio-frontend
+docker pull tanmaykumarchaurasia/portfolio-backend
+docker pull tanmaykumarchaurasia/mongo
+```
+
 ### Running Containers
 
 1. **Run MongoDB Container**:

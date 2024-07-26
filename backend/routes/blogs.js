@@ -10,16 +10,15 @@ router.post('/addblog', async (req, res) => {
     if (!title || !description) {
         return res.status(400).json({ error: 'Title and description are required' });
     }
-    // Logic to add the blog
     try {
         const Blog = await blogsschema.create({
             title: title,
             description: description
         })
-        // Send success response
+       
         res.status(200).json(Blog);
     } catch (error) {
-        // Handle database errors
+        
         console.error('Error adding blog:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
@@ -29,7 +28,6 @@ router.post('/addblog', async (req, res) => {
 router.get("/fetchall", async (req, res) => {
     try {
         let data = await blogsschema.find()
-        // Sending back the data as a response
         res.status(200).send(data)
     } catch (err) {
         console.log(err)

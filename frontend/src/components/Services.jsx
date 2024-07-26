@@ -5,11 +5,18 @@ import editing from '../images/videoediting.jpg';
 import web from '../images/web.jpg';
 import './services.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
 
-
+  const navigate = useNavigate();
   const checkouthandler = async (amount) => {
+
+    const token = localStorage.getItem('token')
+    if(!token) {
+      navigate('/login')
+      return;
+    }
 
     const {data: {order}} = await axios.post('http://localhost:8000/payment/createOrder', { amount });
     console.log(order);

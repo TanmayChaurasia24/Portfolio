@@ -1,0 +1,47 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: "./frontend"
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    container_name: tanmay-container-client
+    environment:
+      - WATCHPACK_POLLING=true
+    networks:
+      - tanmay-network
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+  backend:
+    build:
+      context: "./backend"
+      dockerfile: Dockerfile
+    ports: 
+      - 8000:8000
+    container_name: tanmay-container-server
+    networks:
+      - tanmay-network
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    container_name: tanmay-container-database
+    networks:
+      - tanmay-network
+    volumes:
+      - mongoData:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=tanmay-portfolio-db
+networks:
+  tanmay-network:
+volumes:
+  mongoData:  
